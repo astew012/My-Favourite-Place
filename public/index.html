@@ -9,23 +9,30 @@
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin=""/>
 
-  <!-- Our own styles -->
+  <!-- My own styles -->
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- Debug message -->
-  <div id="debug">Loading map...</div>
-
   <!-- The map goes here -->
   <div id="map"></div>
 
+  <!-- Popup card -->
+<div id="popup" class="hidden">
+    <div id="popup-inner">
+        <img id="popup-image" src="" alt=""/>
+        <div id="popup-place-name"></div>
+        <button id="mic-button">🎤 Hold to speak</button>
+        <div id="transcript"></div>
+        <button id="popup-close">✕</button>
+    </div>
+</div>
+
   <!-- Scripts -->
   <script src="/socket.io/socket.io.js"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""></script>
   <script src="sketch.js"></script>
-
 </body>
 </html>
