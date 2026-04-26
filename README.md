@@ -1,13 +1,23 @@
-# My Favourite Place
+# Postcards of the Mind
 
-An interactive web application that allows users to mark their favourite places on a map in real-time.
+An interactive map-based artwork where users pin places that matter to them, speak about how those places make them feel, and leave glowing emotional traces for others to explore.
 
-## Features
+## How it works
 
-- Interactive Leaflet map centered on the UK
-- Real-time pin placement with Socket.IO
-- Express server backend
-- Debug functionality for development
+1. Click anywhere on the map to select a place
+2. Record how it makes you feel using the voice recorder
+3. The sentiment of your words determines the colour of your glow
+4. Submit to leave your mark on the map
+5. Click any glow to explore postcards left by others
+
+## Emotion colours
+
+| Colour | Emotion |
+|--------|---------|
+| Blue `#6096B4` | Melancholic |
+| Light blue `#93BFCF` | Peaceful |
+| Green `#BDCF93` | Happy |
+| Warm orange `#E9B384` | Joyful |
 
 ## Setup
 
@@ -16,45 +26,46 @@ An interactive web application that allows users to mark their favourite places 
    npm install
    ```
 
-2. Start the server:
+2. Create a `.env` file with your Stadia Maps API key:
+   ```
+   STADIA_API_KEY=your_key_here
+   ```
+
+3. Start the server:
    ```bash
    node server.js
    ```
 
-3. Open your browser to `http://localhost:3000`
+4. Open your browser to `http://localhost:3000`
 
 ## Project Structure
 
 ```
 MyFavouritePlace/
-├── server.js          # Express server with Socket.IO
-├── package.json       # Dependencies and scripts
-├── public/            # Client-side files
-│   ├── index.html     # Main HTML page
-│   ├── sketch.js      # Map initialization and logic
-│   └── style.css      # Styling
-└── .gitignore         # Git ignore rules
+├── server.js          # Express server with Socket.IO, saves pins to pins.json
+├── pins.json          # Persistent store of all submitted pins
+├── package.json       # Dependencies
+├── public/
+│   ├── index.html     # Main HTML
+│   ├── sketch.js      # Map logic, p5 glow layer, voice recognition, sentiment
+│   └── style.css      # Postcard aesthetic styling
+└── .env               # API keys (not committed)
 ```
 
-## Technologies Used
+## Technologies
 
 - **Backend**: Node.js, Express, Socket.IO
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Mapping**: Leaflet.js with OpenStreetMap tiles
-- **Real-time**: Socket.IO for live updates
+- **Mapping**: Leaflet.js with Stadia Maps (Stamen Watercolor tiles)
+- **Creative layer**: p5.js for animated glow rendering
+- **Sentiment analysis**: ml5.js
+- **Voice**: Web Speech API
+- **Real-time**: Socket.IO for shared live experience
 
 ## Attribution
 
-This project uses:
-- **OpenStreetMap** data © OpenStreetMap contributors
-- **Leaflet** - an open-source JavaScript library for interactive maps
-
-Map attribution is displayed in the bottom-right corner of the map interface.
-
-## Development
-
-The application includes debug functionality that shows loading status and error messages. Check the browser console for additional debugging information.
+- Map tiles: Stadia Maps, Stamen Design, OpenStreetMap contributors
+- Place names and images: Nominatim / Wikipedia APIs
 
 ## License
 
-This project is part of a Creative Coding assignment.
+Creative Coding Masters assignment — Anna Stewart, 2025–27

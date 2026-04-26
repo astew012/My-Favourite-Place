@@ -64,6 +64,9 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# Live pin data
+pins.json
 .env.local
 .env.test
 .env.test.local

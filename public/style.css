@@ -18,6 +18,113 @@ body {
 
 
 
+/* Postcard popup */
+.leaflet-popup-content-wrapper {
+    background: #fdf6e3;
+    border-radius: 4px;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.3), 0 0 0 1px #e8dcc8;
+    padding: 0;
+    font-family: 'Caveat', cursive;
+    transform: rotate(-1deg);
+}
+
+.leaflet-popup-content {
+    margin: 0;
+    width: 220px !important;
+}
+
+.postcard-image {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 2px dashed #e8dcc8;
+}
+
+.postcard-body {
+    padding: 10px 14px 12px;
+}
+
+.postcard-place {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #5a4a3a;
+    margin-bottom: 6px;
+}
+
+.postcard-text {
+    font-size: 1.1rem;
+    color: #7a6a5a;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.leaflet-popup-tip {
+    background: #fdf6e3;
+}
+
+.leaflet-popup-close-button {
+    color: #a09080 !important;
+    font-size: 1.2rem !important;
+}
+
+/* Title */
+#title {
+    position: fixed;
+    top: 2vw;
+    left: 50%;
+    transform: translateX(-50%) rotate(-1deg);
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2rem, 5vw, 5rem);
+    font-weight: 600;
+    color: #fdf6e3;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    z-index: 1000;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* Key */
+#key {
+    position: fixed;
+    bottom: 2vw;
+    left: 2vw;
+    background: #fdf6e3;
+    border: 1px solid #e8dcc8;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.3);
+    border-radius: 4px;
+    padding: 1.2vw 1.6vw;
+    font-family: 'Caveat', cursive;
+    transform: rotate(0.6deg);
+    z-index: 1000;
+    min-width: 18vw;
+}
+
+.key-title {
+    font-size: clamp(1rem, 1.8vw, 2rem);
+    font-weight: 600;
+    color: #5a4a3a;
+    margin-bottom: 0.5em;
+    border-bottom: 1px dashed #e8dcc8;
+    padding-bottom: 0.4em;
+}
+
+.key-item {
+    font-size: clamp(0.9rem, 1.4vw, 1.6rem);
+    color: #7a6a5a;
+    margin-top: 0.4em;
+    line-height: 1.4;
+}
+
+/* P5 canvas overlay */
+#p5-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 500;
+}
+
 /* Popup card */
 
 .hidden {
@@ -38,67 +145,99 @@ body {
 }
 
 #popup-inner {
-    background: white;
-    border-radius: 16px;
-    padding: 20px;
-    width: 320px;
+    background: #fdf6e3;
+    border-radius: 4px;
+    box-shadow: 4px 4px 16px rgba(0,0,0,0.4), 0 0 0 1px #e8dcc8;
+    padding: 0;
+    width: 300px;
     position: relative;
     text-align: center;
+    font-family: 'Caveat', cursive;
+    transform: rotate(-0.8deg);
 }
 
 #popup-image {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 12px;
+    display: block;
+    border-bottom: 2px dashed #e8dcc8;
 }
 
 #popup-place-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 16px;
-    color: #333;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #5a4a3a;
+    padding: 10px 16px 4px;
 }
 
 #mic-button {
-    background: #4CAF50;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 24px;
-    font-size: 1rem;
+    background: none;
+    color: #7a6a5a;
+    border: 1px dashed #c8b89a;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-family: 'Caveat', cursive;
     cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
+    width: calc(100% - 32px);
+    margin: 8px 16px 4px;
+    display: block;
+}
+
+#mic-button:hover {
+    background: #f0e8d4;
 }
 
 #stop-button {
-    background: #e74c3c;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 24px;
-    font-size: 1rem;
+    background: none;
+    color: #a05a5a;
+    border: 1px dashed #c8a0a0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-family: 'Caveat', cursive;
     cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
+    width: calc(100% - 32px);
+    margin: 4px 16px;
+    display: block;
 }
+
 #transcript {
-    font-size: 0.85rem;
-    color: #666;
-    min-height: 40px;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #7a6a5a;
+    min-height: 36px;
+    margin: 6px 16px;
     font-style: italic;
+    line-height: 1.4;
+}
+
+#submit-button {
+    background: none;
+    color: #5a7a5a;
+    border: 1px dashed #a0c8a0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-family: 'Caveat', cursive;
+    cursor: pointer;
+    width: calc(100% - 32px);
+    margin: 4px 16px 14px;
+    display: block;
+}
+
+#submit-button:hover {
+    background: #edf4ed;
 }
 
 #popup-close {
     position: absolute;
-    top: 10px;
-    right: 14px;
+    top: 8px;
+    right: 12px;
     background: none;
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
-    color: #999;
+    color: #a09080;
+    font-family: 'Caveat', cursive;
 }
