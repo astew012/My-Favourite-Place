@@ -23,4 +23,8 @@ body {
 #map {
   height: 100vh;
   width: 100vw;
+  filter: saturate(0.8) brightness(0.7);
 }
+
+
+

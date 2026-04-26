@@ -43,17 +43,17 @@ MyFavouritePlace/
 - **Mapping**: Leaflet.js with OpenStreetMap tiles
 - **Real-time**: Socket.IO for live updates
 
+## Attribution
+
+This project uses:
+- **OpenStreetMap** data © OpenStreetMap contributors
+- **Leaflet** - an open-source JavaScript library for interactive maps
+
+Map attribution is displayed in the bottom-right corner of the map interface.
+
 ## Development
 
 The application includes debug functionality that shows loading status and error messages. Check the browser console for additional debugging information.
-
-## Future Enhancements
-
-- User authentication
-- Persistent pin storage
-- Pin categories and descriptions
-- Mobile responsiveness improvements
-- Pin clustering for performance
 
 ## License
 

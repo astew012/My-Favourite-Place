@@ -8,7 +8,7 @@ try {
     // Add the map tiles
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="https://leafletjs.com" title="A JavaScript library for interactive maps">Leaflet</a>'
     }).addTo(map);
 
     console.log('Map tiles added');
