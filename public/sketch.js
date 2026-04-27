@@ -15,13 +15,9 @@ let pendingPin = null;
 
 // ── Socket.IO client ──
 const socket = io();
-socket.on('connect', () => {
-    console.log('Socket connected:', socket.id);
-});
 
 // Receive initial pins from server
 socket.on('init', (serverPins) => {
-    console.log('Initial pins from server:', serverPins);
     for (let pin of serverPins) {
         pins.push(pin);
         addPinMarker(pin);
@@ -30,7 +26,6 @@ socket.on('init', (serverPins) => {
 
 // Listen for new pins added by other clients
 socket.on('pin-added', (pin) => {
-    console.log('Pin added by server:', pin);
     if (!pins.find(p => p.timestamp === pin.timestamp)) {
         pins.push(pin);
         addPinMarker(pin);
@@ -170,7 +165,6 @@ recognition.onresult = function(event) {
     if (finalText && sentiment && pendingPin) {
         const result = sentiment.predict(finalText);
         const { emotion, colour } = getEmotionFromScore(result.score);
-        console.log('Emotion:', emotion, 'Score:', result.score);
         pendingPin.emotion = emotion;
         pendingPin.colour = colour;
         pendingPin.text = finalText;

@@ -37,7 +37,7 @@ app.get('/tiles/:z/:x/:y', async (req, res) => {
     const { z, x, y } = req.params;
     const apiKey = process.env.STADIA_API_KEY;
     const url = `https://tiles.stadiamaps.com/tiles/stamen_watercolor/${z}/${x}/${y}.jpg?api_key=${apiKey}`;
-    
+
     const response = await fetch(url);
     const buffer = await response.buffer();
     res.set('Content-Type', 'image/jpeg');

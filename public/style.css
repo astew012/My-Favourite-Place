@@ -93,27 +93,52 @@ body {
     border: 1px solid #e8dcc8;
     box-shadow: 3px 3px 12px rgba(0,0,0,0.3);
     border-radius: 4px;
-    padding: 1.2vw 1.6vw;
+    padding: 0.8vw 1.2vw;
     font-family: 'Caveat', cursive;
     transform: rotate(0.6deg);
     z-index: 1000;
-    min-width: 18vw;
+    min-width: 14vw;
 }
 
 .key-title {
-    font-size: clamp(1rem, 1.8vw, 2rem);
+    font-size: clamp(0.85rem, 1.3vw, 1.5rem);
     font-weight: 600;
     color: #5a4a3a;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.4em;
     border-bottom: 1px dashed #e8dcc8;
-    padding-bottom: 0.4em;
+    padding-bottom: 0.3em;
 }
 
 .key-item {
-    font-size: clamp(0.9rem, 1.4vw, 1.6rem);
+    font-size: clamp(0.75rem, 1.1vw, 1.3rem);
     color: #7a6a5a;
-    margin-top: 0.4em;
+    margin-top: 0.3em;
     line-height: 1.4;
+}
+
+.colour-key {
+    margin-top: 0.6em;
+    padding-top: 0.4em;
+    border-top: 1px dashed #e8dcc8;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6em;
+}
+
+.colour-row {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    font-size: clamp(0.7rem, 1vw, 1.1rem);
+    color: #7a6a5a;
+}
+
+.swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
 }
 
 /* P5 canvas overlay */
@@ -228,6 +253,14 @@ body {
 
 #submit-button:hover {
     background: #edf4ed;
+}
+
+.popup-hint {
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    color: #b0a090;
+    margin: 4px 16px 0;
+    font-style: italic;
 }
 
 #popup-close {

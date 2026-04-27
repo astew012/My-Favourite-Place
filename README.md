@@ -1,4 +1,4 @@
-# Postcards of the Mind
+# Postcards from the Mind
 
 An interactive map-based artwork where users pin places that matter to them, speak about how those places make them feel, and leave glowing emotional traces for others to explore.
 
@@ -52,6 +52,10 @@ MyFavouritePlace/
 └── .env               # API keys (not committed)
 ```
 
+## Browser support
+
+Currently designed for **Chrome on desktop only**. The Web Speech API (`webkitSpeechRecognition`) is not supported in Firefox, Safari, or on mobile browsers.
+
 ## Technologies
 
 - **Backend**: Node.js, Express, Socket.IO
@@ -66,6 +70,4 @@ MyFavouritePlace/
 - Map tiles: Stadia Maps, Stamen Design, OpenStreetMap contributors
 - Place names and images: Nominatim / Wikipedia APIs
 
-## License
 
-Creative Coding Masters assignment — Anna Stewart, 2025–27
