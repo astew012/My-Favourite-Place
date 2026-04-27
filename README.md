@@ -10,14 +10,6 @@ An interactive map-based artwork where users pin places that matter to them, spe
 4. Submit to leave your mark on the map
 5. Click any glow to explore postcards left by others
 
-## Emotion colours
-
-| Colour | Emotion |
-|--------|---------|
-| Blue `#6096B4` | Melancholic |
-| Light blue `#93BFCF` | Peaceful |
-| Green `#BDCF93` | Happy |
-| Warm orange `#E9B384` | Joyful |
 
 ## Setup
 
@@ -26,7 +18,7 @@ An interactive map-based artwork where users pin places that matter to them, spe
    npm install
    ```
 
-2. Create a `.env` file with your Stadia Maps API key:
+2. Create a `.env` file with your Stadia Maps API key: (website here https://docs.stadiamaps.com/authentication/)
    ```
    STADIA_API_KEY=your_key_here
    ```
