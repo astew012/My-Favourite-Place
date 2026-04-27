@@ -32,7 +32,7 @@ socket.on('pin-added', (pin) => {
     }
 });
 
-// Add a Leaflet marker with popup for a pin and an invisible divIcon to allow custom styling and a larger clickable area without showing the default marker icon. The popup content includes the image, place name, and any text the user added.
+// Add a Leaflet marker with popup for a pin and an invisible divIcon to allow custom styling. The popup content includes the image, place name, and any text the user added.
 function addPinMarker(pin) {
     const content = `
         <img class="postcard-image" src="${pin.imageUrl || 'https://picsum.photos/220/130'}"/>
@@ -47,7 +47,7 @@ function addPinMarker(pin) {
         .addTo(map);
 }
 
-// ── Map setup ──
+// ── Map setup ── //This was from the Leaflet quick start guide, with the addition of a second tile layer for labels only, which allows the map to be more visible and less cluttered. The initial view is set to show all of the UK.
 const map = L.map('map').setView([54.5, -2], 6);
 
 L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.{ext}', {
@@ -62,7 +62,7 @@ L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_labels/{z}/{x}/{y}.
     ext: 'png', opacity: 0.4
 }).addTo(map);
 
-//get place name from lat/lng using Nominatim API
+//get place name from lat/lng using Nominatim API This was with help from Claude.
 async function getPlaceName(lat, lng) {
     const url = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`;
     const response = await fetch(url);
@@ -86,7 +86,7 @@ function getEmotionFromScore(score) {
     return                   { emotion: 'joyful',      colour: '#E9B384' };
 }
 
-// ── Map click ──
+//  Map click 
 map.on('click', async function(e) {
     const { lat, lng } = e.latlng;
 
@@ -123,7 +123,7 @@ document.getElementById('popup-close').addEventListener('click', function() {
     document.getElementById('popup').classList.add('hidden');
 });
 
-// ── Voice recognition ──
+// ── Voice recognition ── // This uses the Web Speech API to capture the user's voice input when they click the microphone button. This was with help from Claude. 
 const recognition = new webkitSpeechRecognition();
 recognition.continuous = true;
 recognition.interimResults = true;
@@ -179,7 +179,7 @@ recognition.onerror = function(event) {
     isListening = false;
 };
 
-// ── P5 Sketch ──
+// P5 Sketch to draw glowing circles behind the Leaflet markers based on the emotion colour. The glow pulses using a sine wave for a subtle animation effect.
 function setup() {
     let canvas = createCanvas(windowWidth, windowHeight);
     canvas.parent('p5-canvas');
@@ -210,7 +210,7 @@ function drawGlow(x, y, colour) {
         ellipse(x, y, r * 2, r * 2);
     }
 
-    // Soft centre dot
+    
     noStroke();
     fill(red(c), green(c), blue(c), 180);
     ellipse(x, y, 5, 5);
