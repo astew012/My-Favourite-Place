@@ -48,6 +48,8 @@ MyFavouritePlace/
 
 Currently designed for **Chrome on desktop only**. The Web Speech API (`webkitSpeechRecognition`) is not supported in Firefox, Safari, or on mobile browsers.
 
+The map tiles max out at zoom level 16 — zooming in beyond this will show a blank map.
+
 ## Technologies
 
 - **Backend**: Node.js, Express, Socket.IO
